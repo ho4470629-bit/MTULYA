@@ -1,252 +1,231 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>NEXT LEVEL WIFI Portal</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* Body na Background HD + Gradient Overlay */
-body{
-  font-family: Arial, sans-serif;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1600185368386-dfbcd82a90cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-h1{
-  margin-bottom: 15px;
-  color:#00ffcc;
-  text-shadow: 1px 1px 5px #000;
-}
+<div class="wifi-section">
 
-/* Form */
-.box{
-  background: rgba(26,26,26,0.9);
-  padding: 20px;
-  margin: 15px auto;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 400px;
-}
-label{
-  display:block;
-  text-align:left;
-  margin-top:10px;
-  font-weight:bold;
-  color:#00ffcc;
-}
-input, select{
-  width: 100%;
-  padding: 10px;
-  margin-top:5px;
-  border-radius:5px;
-  border:none;
-}
-input[type="submit"]{
-  background: #00cc66;
-  color:white;
-  font-weight:bold;
-  margin-top:20px;
-  cursor:pointer;
-  transition: 0.3s;
-}
-input[type="submit"]:hover{
-  background: #00994d;
-  transform:scale(1.02);
-}
-p.notice{
-  color: yellow;
-  font-size: 14px;
-}
+  <!-- AUDIO SUCCESS -->
+  <audio id="successSound" src="https://assets.mixkit.co/sfx/preview/mixkit-positive-notification-951.mp3" preload="auto"></audio>
 
-/* WiFi list */
-.wifi-list{
-  text-align:left;
-  margin: 20px auto;
-  max-width: 400px;
-  background: rgba(0,0,0,0.7);
-  padding:15px;
-  border-radius:10px;
-}
-.wifi-list li{
-  margin: 5px 0;
-  font-weight:bold;
-  color:#00ffcc;
-}
-
-/* Trust Section */
-.trust{
-  background: rgba(17,17,17,0.9);
-  border:2px solid #00cc66;
-  padding:20px;
-  margin:25px auto;
-  border-radius:10px;
-  max-width:500px;
-  text-align:left;
-}
-.trust h2{
-  color:#00cc66;
-  margin-bottom:10px;
-}
-.trust p{
-  color:#ffffff;
-  font-size:14px;
-  line-height:1.5;
-}
-.trust p span{
-  color:#00ffcc;
-  font-weight:bold;
-}
-
-/* Instructions Section */
-.instructions{
-  background: rgba(26,26,26,0.9);
-  padding:20px;
-  margin:20px auto;
-  border-radius:10px;
-  max-width:500px;
-  text-align:left;
-}
-.instructions h2{
-  color:#00ffcc;
-  margin-bottom:10px;
-}
-.instructions ol{
-  color:white;
-  line-height:1.5;
-}
-.instructions ol li{
-  margin:5px 0;
-}
-
-/* Chart Section Fupisha */
-.chart-section{
-  background: rgba(26,26,26,0.9);
-  padding: 15px;
-  margin: 20px auto;
-  border-radius:10px;
-  max-width:400px;
-  text-align:center;
-}
-.chart-section h2{
-  color:#00ffcc;
-  margin-bottom:10px;
-  font-size:18px;
-}
-.chart{
-  display:flex;
-  justify-content: space-around;
-  align-items:flex-end;
-  height:250px;
-}
-.bar{
-  width:60px;
-  background: #00cc66;
-  border-radius:5px 5px 0 0;
-  position: relative;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  transition: 0.3s;
-}
-.bar span{
-  color:white;
-  font-weight:bold;
-  position:absolute;
-  bottom: -20px;
-  text-align:center;
-  width:100%;
-  font-size:12px;
-}
-.bar:hover{
-  background:#00994d;
-  transform:scale(1.05);
-}
-</style>
-</head>
-<body>
-
-<h1>NEXT LEVEL WIFI</h1>
-
-<!-- WiFi Networks -->
-<div class="wifi-list">
-<h2>Available Networks</h2>
-<ul>
-<li>NEXT LEVEL STUDIO 1</li>
-<li>NEXT LEVEL STUDIO 2</li>
-</ul>
-</div>
-
-<div class="box">
-<form id="wifiForm">
-<label>Jina:</label>
-<input type="text" name="name" placeholder="Jina lako" required>
-
-<label>Namba ya simu:</label>
-<input type="text" name="phone" placeholder="Ex: 0763xxxxxx" required>
-
-<label>Chagua kifurushi:</label>
-<select name="package" required>
-<option value="Daily Tsh 1000">Daily Tsh 1000</option>
-<option value="Weekly Tsh 5000">Weekly Tsh 5000</option>
-<option value="Monthly Tsh 15000">Monthly Tsh 15000</option>
-</select>
-
-<input type="submit" value="Activate WiFi">
-<p class="notice">Automatic hotspot activation not available yet. You will receive WhatsApp confirmation.</p>
-</form>
-</div>
-
-<!-- Trust Section -->
-<div class="trust">
-<h2>Uhakika na Uaminifu</h2>
-<p>
-Tunajiamini <span>100%</span> kwa huduma yetu ya WiFi. Ikiwa internet itakusumbua au haifanyi kazi kama ilivyotarajiwa, 
-tutakulipia pesa yako bila malalamiko. Wateja wetu ni kipaumbele chetu, na tunahakikisha kila muunganisho unakuwa salama na wenye kasi.
-</p>
-<p>
-Jaribu huduma yetu kwa amani ya akili – wewe unafurahia, sisi tunahakikisha ubora.
-</p>
-</div>
-
-<!-- Instructions Section -->
-<div class="instructions">
-<h2>Jinsi ya Kuunganisha WiFi</h2>
-<ol>
-<li><strong>Simu / Tablet:</strong> Settings ? Wi-Fi ? Chagua "NEXT LEVEL STUDIO 1" au "NEXT LEVEL STUDIO 2" ? Ingiza password ? Connect.</li>
-<li><strong>PC / Laptop:</strong> Wi-Fi settings ? Chagua network ? Ingiza password ? Connect.</li>
-<li><strong>Smart TV:</strong> Settings ? Network ? Wi-Fi ? Chagua network ? Ingiza password ? Connect.</li>
-</ol>
-<p style="color:#00ffcc; font-weight:bold;">Kama una changamoto yoyote, tuma message kwenye WhatsApp 0768129449 na tutakuongoza.</p>
-</div>
-
-<!-- Package Chart -->
-<div class="chart-section">
-  <h2>Comparison ya Kifurushi</h2>
-  <div class="chart">
-    <div class="bar" style="height:60px;"><span>Daily 1k</span></div>
-    <div class="bar" style="height:150px;"><span>Weekly 5k</span></div>
-    <div class="bar" style="height:250px;"><span>Monthly 15k</span></div>
+  <!-- TOP WIFI LOGO -->
+  <div class="wifi-logo">
+    <div class="wifi-icons">?? ?? ?</div>
+    <h1>NEXT LEVEL INTERNET</h1>
   </div>
+
+  <!-- SPEED PROMO -->
+  <div class="speed-promo">
+    <h2>INTERNET YA KASI SANA - MASAA 24</h2>
+    <p>
+      ? HAIKATIKI<br>
+      ? MUUNGANISHO WA HARAKA<br>
+      ? INAFANYA KAZI USIKU NA MCHANA<br>
+      ? UNAWEZA KUJIUNGA AU KULIPIA WIFI MASAA YOTE
+    </p>
+    <div class="big-contact">PIGA SASA: 0768129449</div>
+  </div>
+
+  <!-- BANDO -->
+  <div class="bando-title">CHAGUA KIFURUSHI CHAKO</div>
+  <div class="bando-cards">
+    <div class="card" data-package="Daily Tsh 1000" data-price="1000">DAILY<br>1000 TSH</div>
+    <div class="card" data-package="Weekly Tsh 5000" data-price="5000">WEEKLY<br>5000 TSH</div>
+    <div class="card" data-package="Monthly Tsh 15000" data-price="15000">MONTHLY<br>15000 TSH</div>
+  </div>
+
+  <!-- FORM -->
+  <div class="wifi-form">
+    <h3>JAZA TAARIFA ZAKO</h3>
+    <form id="wifiForm">
+      <label>JINA LAKO</label>
+      <input type="text" name="name" placeholder="ANDIKA JINA LAKO HAPA..." required>
+      <label>NAMBA YA SIMU</label>
+      <input type="text" name="phone" placeholder="WEKA NAMBA MFANO 07XXXXXXXX..." required>
+      <input type="submit" value="TUMA OMBI LA WIFI">
+    </form>
+  </div>
+
+  <!-- SUCCESS POPUP -->
+  <div id="successPopup" class="popup-success">
+    <div class="popup-box">
+      <h2>? IMEFANIKIWA!</h2>
+      <p>
+        ASANTE KWA KUCHAGUA <b>NEXT LEVEL INTERNET</b> ??<br><br>
+        Hongera kwa kuendelea kutumia huduma yetu.<br>
+        ?? Mtoa huduma wetu atakupigia hivi punde kukuwezesha muunganisho.<br><br>
+        Karibu sana ??
+      </p>
+      <button onclick="closePopup()">SAWA</button>
+    </div>
+  </div>
+
 </div>
+
+<style>
+/* BACKGROUND IMAGE FIXED */
+.wifi-section{
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)),
+    url('https://scontent.fdar5-1.fna.fbcdn.net/v/t39.30808-6/485301678_1214839136651533_4500023029329883169_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=_lABqUeh9g8Q7kNvwEDKnql&_nc_oc=AdphgdfEb1K9FlkG87VQ7M_nZQzXOMYYGmrB6AVmX9BB0CV5GFe7qbZonAwtjFEEr5g&_nc_zt=23&_nc_ht=scontent.fdar5-1.fna&_nc_gid=2nI1s12i9FwT8dnNVCJe1Q&_nc_ss=7a30f&oh=00_AfyxTn72Jd-uVeipqnAr9iOBruzA4VpicNXrpsv8aCZt7A&oe=69C2DDD5');
+  background-size:cover;
+  background-position:center 40%;
+  background-attachment:fixed;
+  filter: contrast(1.1) brightness(1.1);
+  padding:20px;
+  color:white;
+  font-family:Arial;
+}
+
+/* LOGO */
+.wifi-logo{text-align:center;margin-top:30px;}
+.wifi-logo h1{
+  font-size:36px;
+  color:#00ffcc;
+  text-shadow:0 0 15px #00ffcc, 0 0 30px #00cc66;
+  letter-spacing:3px;
+}
+.wifi-icons{
+  font-size:50px;
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.2);}100%{transform:scale(1);}}
+
+/* SPEED PROMO */
+.speed-promo{
+  background:linear-gradient(135deg,#00cc66,#00ffcc);
+  color:black;
+  padding:25px;
+  border-radius:15px;
+  margin:25px;
+  text-align:center;
+  font-weight:bold;
+  box-shadow:0 15px 40px rgba(0,255,200,0.6);
+}
+.big-contact{
+  margin-top:15px;
+  font-size:30px;
+  color:red;
+  text-shadow:0 0 10px red, 0 0 25px red;
+}
+
+/* BANDO */
+.bando-title{
+  text-align:center;
+  font-size:24px;
+  color:#00ffcc;
+  margin-top:20px;
+  font-weight:bold;
+}
+.bando-cards{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+.card{
+  background:#111;
+  color:#00ffcc;
+  padding:25px;
+  border-radius:15px;
+  font-weight:bold;
+  cursor:pointer;
+  text-align:center;
+  transition:0.3s;
+  box-shadow:0 5px 20px black;
+}
+.card:hover{
+  transform:scale(1.1) rotateY(10deg);
+  box-shadow:0 15px 35px #00ffcc;
+}
+.card.selected{
+  background:#00ffcc;
+  color:black;
+  box-shadow:0 0 30px #00ffcc;
+}
+
+/* FORM */
+.wifi-form{
+  background:rgba(0,0,0,0.85);
+  margin:30px;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 10px 30px black;
+}
+label{display:block;margin-top:15px;font-weight:bold;color:#00ffcc;}
+input{width:100%;padding:12px;margin-top:5px;border-radius:8px;border:none;background:#000;color:white;}
+input[type="submit"]{
+  background:#00cc66;
+  margin-top:20px;
+  font-weight:bold;
+  cursor:pointer;
+}
+input[type="submit"]:hover{background:#00994d;}
+
+/* SUCCESS POPUP */
+.popup-success{
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+.popup-box{
+  background:#111;
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+  max-width:350px;
+  color:white;
+  box-shadow:0 0 30px #00ffcc;
+  animation:popIn 0.4s ease;
+}
+.popup-box h2{color:#00ffcc;}
+.popup-box button{
+  margin-top:15px;
+  padding:10px;
+  border:none;
+  background:#00cc66;
+  color:white;
+  font-weight:bold;
+  border-radius:8px;
+  cursor:pointer;
+}
+.popup-box button:hover{background:#00994d;}
+@keyframes popIn{from{transform:scale(0.5); opacity:0;} to{transform:scale(1); opacity:1;}}
+</style>
 
 <script>
-const whatsappNumber = "255768129449"; 
-document.getElementById('wifiForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const form = e.target;
-  const name = encodeURIComponent(form.name.value);
-  const phone = encodeURIComponent(form.phone.value);
-  const pack = encodeURIComponent(form.package.value);
-  
-  const msg = `Mteja ame-order WiFi:\nJina: ${name}\nNamba: ${phone}\nKifurushi: ${pack}`;
-  const waLink = `https://wa.me/${whatsappNumber}?text=${msg}`;
-  
-  window.open(waLink, '_blank');
-  form.reset();
-  alert("Request sent! You will receive confirmation via WhatsApp.");
+// SELECT PACKAGE
+let selectedPackage = null;
+const cards = document.querySelectorAll(".card");
+cards.forEach(card=>{
+  card.addEventListener("click",()=>{
+    cards.forEach(c=>c.classList.remove("selected"));
+    card.classList.add("selected");
+    selectedPackage = {name: card.dataset.package, price: card.dataset.price};
+  });
 });
-</script>
 
-</body>
-</html>
+// WHATSAPP + SUCCESS POPUP + SOUND
+const whatsappNumber = "255768129449";
+document.getElementById("wifiForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  if(!selectedPackage){alert("CHAGUA KIFURUSHI KWANZA"); return;}
+  const name = e.target.name.value;
+  const phone = e.target.phone.value;
+  const msg = `OMBI LA WIFI%0AJINA: ${name}%0ANAMBA: ${phone}%0AKIFURUSHI: ${selectedPackage.name}%0ABEI: ${selectedPackage.price} TSH`;
+  window.open(`https://wa.me/${whatsappNumber}?text=${msg}`);
+
+  // ONYESHA POPUP + SOUND
+  document.getElementById("successPopup").style.display="flex";
+  document.getElementById("successSound").play();
+
+  // RESET FORM + DESELECT
+  e.target.reset();
+  cards.forEach(c=>c.classList.remove("selected"));
+  selectedPackage = null;
+});
+
+// CLOSE POPUP
+function closePopup(){document.getElementById("successPopup").style.display="none";}
+</script>
